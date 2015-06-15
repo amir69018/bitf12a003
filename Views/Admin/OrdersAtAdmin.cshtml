@@ -5,7 +5,7 @@
 
 }
 
-<h2>Orders</h2>
+<h2 class="header text-center">Orders</h2>
 <div class="table-responsive col-lg-10">
     <table class="table table-condensed table-hover table-bordered table-striped">
         <tr style="font-weight:bold;">
@@ -22,6 +22,9 @@
                 <td>@v.product_id</td>
                 <td>@v.user_id</td>
                 <td>@v.date</td>
+                <td>
+                    <a href="/Admin/DeleteOrder/@v.user_id">Delete</a>
+                </td>
             </tr>
         }
 

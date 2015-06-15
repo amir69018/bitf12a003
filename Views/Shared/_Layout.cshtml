@@ -15,7 +15,6 @@
         //#ecf0f1
         var randomArray = ["#16a085", "#e67e22", "#f1c40f", "#2c3e50", "#3498db", "#95a5a6", "#8e44ad", "#27ae60", "#f39c12", "#bdc3c7"];
         $(document).ready(function () {
-            var div = $("div");
             //div.animate({ left: '100px',  opacity: '0.5' }, "slow");
             //div.animate({ opacity: '0.7' }, "5000");
             // div.animate({ opacity: '1.5' }, "slow");
@@ -23,9 +22,9 @@
             //div.animate({ width: '300px', opacity: '0.8' }, "slow");
             //div.animate({ height: '100px', opacity: '0.4' }, "slow");
             //div.animate({ width: '100px', opacity: '0.8' }, "slow");
-            var jumb = $(".jumbotron");
             //  jumb.slideUp("fast");
             //    jumb.slideDown("slow");
+            var jumb = $(".jumbotron");
             jumb.fadeIn("slow");
 
             //change the color
@@ -37,13 +36,10 @@
             //        });
             //    }, 1000*start);
             // $("body").fadeIn("slow");
-            var x = @Session["user"]
-            
 
-            $('#userName').append("<p>" + x.user_first_name + "</p>");
+
             $("#checkEmail").click(function () {
                 var emailValue = $('#emailInputbox').val();
-                //alert("Button Clicked");
 
                 $.getJSON("/Accounts/CheckAccountAvailibility?email=" + emailValue, function (data) {
                     if (data) {
@@ -58,20 +54,33 @@
 
                     }
                 });
+
+
             });
 
 
+            $(function () {
+                $('a[href="#search"]').on('click', function (event) {
+                    event.preventDefault();
+                    $('#search').addClass('open');
+                    $('#search > form > input[type="search"]').focus();
+                });
+
+                $('#search, #search button.close').on('click keyup', function (event) {
+                    if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+                        $(this).removeClass('open');
+                    }
+                });
 
 
-           
 
+            });
+
+
+          
 
         });
-        var jumbo = $(".jumbotron");
-        jumbo.on('click', function () {
-            jumbo.css('opacity', '0.9');
 
-        });
 
 
 
@@ -80,8 +89,8 @@
     </script>
 </head>
 <body>
-    
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+    <nav class="navbar navbar-default" role="navigation">
         <!-- <div class="col-lg-12" style="background-color: #5595c3; height:30px;"></div>-->
         <div class="container">
             <div class="navbar-header">
@@ -91,31 +100,58 @@
             </div>
             <div>
                 <ul id="nav" class="nav navbar-nav">
-                    <li><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home" style="color: #58aae0; margin-right:10px;"></span>Home</a></li>
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                     <li>@Html.ActionLink("Products", "Index", "Products")</li>
                     <li>@Html.ActionLink("Services", "Services", "Home")</li>
                     <li>@Html.ActionLink("Account", "Login", "Accounts")</li>
                     <li>@Html.ActionLink("Register", "Register", "Accounts")</li>
                     <li>@Html.ActionLink("About Us", "Aboutus", "Home")</li>
                     <li>@Html.ActionLink("contact Us", "ContactUs", "Home")</li>
-                    <li class="pull-right" id="userName"></li>
-                   
                 </ul>
-                <form class="navbar-form navbar-right" action="/Products/SearchProduct" method="post" role="search">
-                    <div class="input-group">
-                        <input id="searchbar" name="searchbar" type="text" class="form-control" placeholder="Search">
-                        <span class="input-group-btn ">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search" aria-hidden="true" style="color:#58aae0"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form>
+
             </div>
+            <div>
+                <ul id="nav" class="nav navbar-nav pull-right">
+                    @{if (@Session["user_name"] != null) {
+
+                         <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                           Hi, @Session["user_name"]
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" >
+                            <li class="dropdown-header">SETTINGS</li>
+                            <li class=""><a href="/Accounts/UserProfile">Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/Accounts/Logout">Logout</a></li>
+                        </ul>
+                    </li>
+                        
+                    } } 
+                    <li id="searchicon" class="btn-info"><a href="#search"><span class="glyphicon glyphicon-search"></span></a></li>
+                </ul>
+            </div>
+          
         </div>
     </nav>
-    <div style="margin-top:70px">
+    
+        @{if (@Session["message"] != null) {
+                <div id="message" class="text-center alert alert-info leftrightBasicMargins lead">
+                    <p>@Session["message"]</p>
+                    </div>
+            Session.Contents.Remove("message");
+
+        } }
+    
+    
+    <div id="search">
+        <button type="button" class="close">×</button>
+        <form action="/Products/SearchProduct" method="post" role="search">
+            <input type="search" id="searchbar" name="searchbar" value="" placeholder="type keyword(s) here" />
+            <button type="submit" class="btn btn-success btn-lg">Search</button>
+        </form>
     </div>
+    
     @RenderBody()
 
     <footer class="footer">
