@@ -1,0 +1,66 @@
+﻿@model RespromedicalMVC.Models.Product
+@{
+    ViewBag.Title = "NewProduct";
+     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<p class="header">Add a new product</p>
+
+<div class="col-md-5">
+    <div class="well well-sm">
+        <form class="form-horizontal" action="/Admin/AddNewProduct" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend class="text-center header">Product Details</legend>
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-1">
+                        @Html.TextBoxFor(u => u.product_name, new { @placeholder = "Name", @class = "form-control input-lg", @tabindex = "1" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-8 col-md-offset-1">
+                        @Html.DropDownListFor(model => model.product_category_id, new SelectList(
+                  new List<Object>{
+                       new { value = 1 , text = "CPAP"  },
+                      new { value = 2 , text = "BIPAP" },
+                       new { value = 3 , text = "Nebulizer"}
+                    },
+                  "value",
+                  "text",
+                   5), new { @class = "form-control input-lg" })
+                    </div>
+                </div>
+
+              
+
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-1">
+                        @Html.TextBoxFor(u => u.product_number, new { @placeholder = "Product Number", @class = "form-control input-lg", @tabindex = "1" })
+
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-1">
+                        @Html.TextAreaFor(u => u.product_description, new { rows = 10, @placeholder = "Product Description", @class = "form-control input-lg", @tabindex = "1" })
+
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-1">
+                        <input type="file" class="btn btn-info btn-lg" name="path">
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿@model List<RespromedicalMVC.Models.Order>
+@{
+    ViewBag.Title = "OrdersAtAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h2>Orders</h2>
+<div class="table-responsive col-lg-10">
+    <table class="table table-condensed table-hover table-bordered table-striped">
+        <tr style="font-weight:bold;">
+            <td>Order ID</td>
+            <td>Product ID</td>
+            <td>User ID</td>
+            <td>Date</td>
+        </tr>
+
+        @foreach (var v in Model) {
+
+            <tr>
+                <td>@v.order_id</td>
+                <td>@v.product_id</td>
+                <td>@v.user_id</td>
+                <td>@v.date</td>
+            </tr>
+        }
+
+    </table>
+</div>

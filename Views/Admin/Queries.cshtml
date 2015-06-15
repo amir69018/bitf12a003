@@ -1,0 +1,39 @@
+﻿@model List<RespromedicalMVC.Models.Query>
+@{
+    ViewBag.Title = "Queries";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h2>Queries</h2>
+<div class="table-responsive col-lg-10">
+    <table class="table table-condensed table-hover table-bordered table-striped">
+        <tr style="font-weight:bold;">
+            <td>#</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Contact</td>
+            <td>Message</td>
+            <td>Date</td>
+
+        </tr>
+
+        @foreach (var v in Model) {
+
+            <tr>
+                <td>@v.query_id</td>
+                <td>@v.name</td>
+                <td>@v.email</td>
+                <td>@v.contact</td>
+                <td>@v.message</td>
+                <td>@v.date</td>
+                
+                <td>
+                    <a href="/Admin/DeleteQuery/@v.query_id">Delete</a>
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

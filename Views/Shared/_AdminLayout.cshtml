@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="~/Images/favicon.png">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery.canvasjs.min.js"></script>
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    <link href="~/css/main-style.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <script>
+        //$(document).ready(function () {
+
+        //    //Better to construct options first and then pass it as a parameter
+        //    var options = {
+        //        exportEnabled: true,
+        //        animationEnabled: true,
+        //        title: {
+        //            text: "Exporting Chart as Image"
+        //        },
+        //        data: [
+        //        {
+        //            type: "splineArea", //change it to line, area, bar, pie, etc
+        //            dataPoints: [
+        //                { y: 10 },
+        //                { y: 6 },
+        //                { y: 14 },
+        //                { y: 12 },
+        //                { y: 19 },
+        //                { y: 14 },
+        //                { y: 26 },
+        //                { y: 10 },
+        //                { y: 22 }
+        //            ]
+        //        }
+        //        ]
+        //    };
+
+        //    $("#chartContainer").CanvasJSChart(options);
+
+        //});
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-static-top" style="background-color: #dcd4d4; font-family:Dotum; ">
+        
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <b> Respro Medical</b>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/Home/Index" target="_blank">Visit Site</a></li>
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            @Session["AdminName"]
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" >
+                            <li class="dropdown-header">SETTINGS</li>
+                            <li class=""><a href="#">Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/Admin/AdminLogin">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid main-container">
+        <div class="col-md-2 sidebar">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="/Admin/Dashborad">Dashboard</a></li>
+                <li><a href="/Admin/Users">Users<span class="badge btn-danger">3</span></a></li>
+                <li><a href="/Admin/ProductsAtAdmin">Products<span class="badge btn-danger" >2</span></a></li>
+                <li><a href="/Admin/Queries">Queries<span class="badge btn-danger" >4</span></a></li>
+                <li><a href="/Admin/OrdersAtAdmin">Orders<span class="badge btn-danger">12</span></a></li>
+            </ul>
+        </div>
+
+       
+        @RenderBody()
+
+      
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">&copy; 2014 Company, Inc. &middot; <a href="/Home/AboutUs">Privacy</a> &middot; <a href="/Home/TermsAndConditions">Terms</a></p>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

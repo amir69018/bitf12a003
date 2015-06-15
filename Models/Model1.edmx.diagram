@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="25dd76332484453d999779da94a1da28" Name="Diagram1">
+        <EntityTypeShape EntityType="RMDBModel.ProductCategory" Width="1.875" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMDBModel.Product" Width="1.5" PointX="4" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMDBModel.Query" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="RMDBModel.FK_Products_ProductCategory" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RMDBModel.Order" Width="1.5" PointX="6.25" PointY="3.875" />
+        <AssociationConnector Association="RMDBModel.FK_Orders_Product" />
+        <EntityTypeShape EntityType="RMDBModel.User" Width="1.5" PointX="3.25" PointY="5.25" />
+        <AssociationConnector Association="RMDBModel.FK_Orders_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

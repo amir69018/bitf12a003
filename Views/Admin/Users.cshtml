@@ -1,0 +1,45 @@
+﻿@model List<RespromedicalMVC.Models.User>
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Users</h2>
+<div class="table-responsive col-lg-10">
+    <table class="table table-condensed table-hover table-bordered table-striped">
+        <tr style="font-weight:bold;">
+            <td>#</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Contact</td>
+            <td>Address</td>
+            <td>Email</td>
+            <td>Password</td>
+            <td>Last Login</td>
+            <td>Last Location</td>
+            <td>Login IP</td>
+        </tr>
+
+        @foreach (var v in Model) {
+           
+                <tr>
+                    <td>@v.user_id</td>
+                    <td>@v.user_first_name</td>
+                    <td>@v.user_last_name</td>
+                    <td>@v.user_contact</td>
+                    <td>@v.user_address</td>
+                    <td>@v.user_email</td>
+                    <td>@v.user_password</td>
+                    <td>@v.last_login</td>
+                    <td>@v.user_login_location</td>
+                    <td>@v.user_login_ip</td>
+                    <td>
+                        <a href="/Admin/UpdateUser/@v.user_id">Update</a>
+                        | <a href="/Admin/DeleteUser/@v.user_id">Delete</a>
+                    </td>
+
+                </tr>
+        }
+
+    </table>
+</div>
