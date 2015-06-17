@@ -29,6 +29,9 @@ ul#nav li a:hover {
     border-radius: 50px;
     border: 2px solid #8AC007;
 }
+.jumbotron p{
+    color:white;
+}
 
 .container {
     font-family: 'Eras ITC';
@@ -108,10 +111,15 @@ ul#nav li a:hover {
 
 .featurette img {
     height: 200px;
-    width: 300px;
+    width: 200px;
     opacity: 0.9;
 }
 
+.marketing img{
+     height: 200px;
+    width: 200px;
+    
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -226,6 +234,3 @@ body {
         padding: 10px 17px;
         font-size: 27px;
     }
-
-
-

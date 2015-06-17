@@ -9,12 +9,18 @@
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Scripts/jquery-1.11.3.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.min.js"></script>
+
     <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
     <link href="~/Css/StyleSheet.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
     <script>
         //#ecf0f1
         var randomArray = ["#16a085", "#e67e22", "#f1c40f", "#2c3e50", "#3498db", "#95a5a6", "#8e44ad", "#27ae60", "#f39c12", "#bdc3c7"];
         $(document).ready(function () {
+
+
+
             //div.animate({ left: '100px',  opacity: '0.5' }, "slow");
             //div.animate({ opacity: '0.7' }, "5000");
             // div.animate({ opacity: '1.5' }, "slow");
@@ -27,6 +33,10 @@
             var jumb = $(".jumbotron");
             jumb.fadeIn("slow");
 
+            setTimeout(function () {
+                $('#demo-content').hide("fast");
+            }, 1000);
+           $('#demo').slideDown("fast");
             //change the color
             //for (var start = 1; start < 200; start++)
             //    setTimeout(function () {
@@ -57,8 +67,6 @@
 
 
             });
-
-
             $(function () {
                 $('a[href="#search"]').on('click', function (event) {
                     event.preventDefault();
@@ -75,94 +83,95 @@
 
 
             });
-
-
-          
+   
 
         });
-
-
-
-
-
 
     </script>
 </head>
 <body>
+    <div id="demo-content" style="height: 100%; width: 100%; display:block; z-index:1;">
 
-    <nav class="navbar navbar-default" role="navigation">
-        <!-- <div class="col-lg-12" style="background-color: #5595c3; height:30px;"></div>-->
-        <div class="container">
-            <div class="navbar-header">
-                <ul class="nav nav-pills">
-                    <li role="banner"><b>@Html.ActionLink("Respro Medical", "Index", "Home", new { @class = "navbar-brand" })</b></li>
-                </ul>
-            </div>
-            <div>
-                <ul id="nav" class="nav navbar-nav">
-                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                    <li>@Html.ActionLink("Products", "Index", "Products")</li>
-                    <li>@Html.ActionLink("Services", "Services", "Home")</li>
-                    <li>@Html.ActionLink("Account", "Login", "Accounts")</li>
-                    <li>@Html.ActionLink("Register", "Register", "Accounts")</li>
-                    <li>@Html.ActionLink("About Us", "Aboutus", "Home")</li>
-                    <li>@Html.ActionLink("contact Us", "ContactUs", "Home")</li>
-                </ul>
-
-            </div>
-            <div>
-                <ul id="nav" class="nav navbar-nav pull-right">
-                    @{if (@Session["user_name"] != null) {
-
-                         <li class="dropdown ">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                           Hi, @Session["user_name"]
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu" >
-                            <li class="dropdown-header">SETTINGS</li>
-                            <li class=""><a href="/Accounts/UserProfile">Profile</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/Accounts/Logout">Logout</a></li>
-                        </ul>
-                    </li>
-                        
-                    } } 
-                    <li id="searchicon" class="btn-info"><a href="#search"><span class="glyphicon glyphicon-search"></span></a></li>
-                </ul>
-            </div>
-          
+        <div id="loader-wrapper">
+            <div id="loader"></div>
         </div>
-    </nav>
-    
+
+    </div>
+    <div id="demo" style="display:none">
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- <div class="col-lg-12" style="background-color: #5595c3; height:30px;"></div>-->
+            <div class="container">
+                <div class="navbar-header">
+                    <ul class="nav nav-pills">
+                        <li role="banner" class="navbar-brand"><b>Respro Medical</b></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul id="nav" class="nav navbar-nav">
+                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li>@Html.ActionLink("Products", "Index", "Products")</li>
+                        <li>@Html.ActionLink("Services", "Services", "Home")</li>
+                        <li>@Html.ActionLink("Account", "Login", "Accounts")</li>
+                        <li>@Html.ActionLink("Register", "Register", "Accounts")</li>
+                        <li>@Html.ActionLink("About Us", "Aboutus", "Home")</li>
+                        <li>@Html.ActionLink("contact Us", "ContactUs", "Home")</li>
+                    </ul>
+
+                </div>
+                <div>
+                    <ul id="nav" class="nav navbar-nav pull-right">
+                        @{if (@Session["user_name"] != null) {
+
+                            <li class="dropdown ">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Hi, @Session["user_name"]
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown-header">SETTINGS</li>
+                                    <li class=""><a href="/Accounts/UserProfile">Profile</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/Accounts/Logout">Logout</a></li>
+                                </ul>
+                            </li>
+
+                        } }
+                        <li id="searchicon" class="btn-info"><a href="#search"><span class="glyphicon glyphicon-search"></span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
         @{if (@Session["message"] != null) {
-                <div id="message" class="text-center alert alert-info leftrightBasicMargins lead">
-                    <p>@Session["message"]</p>
-                    </div>
+            <div id="message" class="text-center alert alert-info leftrightBasicMargins lead">
+                <p>@Session["message"]</p>
+            </div>
             Session.Contents.Remove("message");
 
         } }
-    
-    
-    <div id="search">
-        <button type="button" class="close">×</button>
-        <form action="/Products/SearchProduct" method="post" role="search">
-            <input type="search" id="searchbar" name="searchbar" value="" placeholder="type keyword(s) here" />
-            <button type="submit" class="btn btn-success btn-lg">Search</button>
-        </form>
-    </div>
-    
-    @RenderBody()
 
-    <footer class="footer">
-        <div class="container">
-            <p class="pull-right"><a href="#">Back to top</a></p>
 
-            <p class="text-muted">&copy; 2014 Company, Inc. &middot; @Html.ActionLink("Privacy", "Aboutus", "Home") &middot; @Html.ActionLink("Terms", "TermsAndConditions", "Home")</p>
-
+        <div id="search">
+            <button type="button" class="close">×</button>
+            <form action="/Products/SearchProduct" method="post" role="search">
+                <input type="search" id="searchbar" name="searchbar" value="" placeholder="type keyword(s) here" />
+                <button type="submit" class="btn btn-success btn-lg">Search</button>
+            </form>
         </div>
-    </footer>
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+
+        @RenderBody()
+
+        <footer class="footer">
+            <div class="container">
+                <p class="pull-right"><a href="#">Back to top</a></p>
+
+                <p class="text-muted">&copy; 2014 Company, Inc. &middot; @Html.ActionLink("Privacy", "Aboutus", "Home") &middot; @Html.ActionLink("Terms", "TermsAndConditions", "Home")</p>
+
+            </div>
+        </footer>
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </div>
 </body>
 </html>

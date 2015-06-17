@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Preload";
+    Layout = null;
+}
+<script src="~/Scripts/jquery-1.11.3.min.js"></script>
+<script src="~/Scripts/modernizr-2.6.2.js"></script>
+<link href="~/css/main.css" rel="stylesheet" />
+<script>
+    $(document).ready(function () {
+       // $('#demo-content').show("fast");
+        setTimeout(function () {
+            $('#demo').load("/Home/Index");
+            $('#demo-content').hide("fast");
+
+        }, 1000);
+        $('#demo').slideDown("fast");
+    });
+</script>
+<body >
+    <div id="demo-content" style="height: 100%; width: 100%;">
+
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+        </div>
+
+    </div>
+    <div id="demo" style="display:none"></div>
+</body>
+
