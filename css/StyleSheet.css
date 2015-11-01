@@ -1,4 +1,10 @@
-﻿.leftrightBasicMargins {
+﻿#backtotop a {
+    transition: all .3s ease-in-out;
+}
+
+
+
+.leftrightBasicMargins {
     margin-left: 100px;
     margin-right: 100px;
 }
@@ -7,9 +13,10 @@
     background-color: #dcd4d4;
 }
 
-.nav{
-   font-size:15px;
+.nav {
+    font-size: 15px;
 }
+
 ul#nav li a:hover {
     /*border-bottom:2px solid #06ff1b;*/
     border-left: 2px solid #f0f0f0;
@@ -20,18 +27,19 @@ ul#nav li a:hover {
     font-family: 'Copperplate Gothic';
 }
 
-.glyphicon{
-    font-size:20px;
-
+.glyphicon {
+    font-size: 20px;
 }
+
 .jumbotron {
     display: none;
     border-radius: 50px;
     border: 2px solid #8AC007;
 }
-.jumbotron p{
-    color:white;
-}
+
+    .jumbotron p {
+        color: white;
+    }
 
 .container {
     font-family: 'Eras ITC';
@@ -115,10 +123,9 @@ ul#nav li a:hover {
     opacity: 0.9;
 }
 
-.marketing img{
-     height: 200px;
+.marketing img {
+    height: 200px;
     width: 200px;
-    
 }
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -127,19 +134,56 @@ html {
     min-height: 100%;
 }
 
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
+
+#footer {
+	background: #222;
+	text-align: center;
+	padding: 40px 0;
+	color: #FFF;
 }
 
-.footer {
-    position:  absolute;
-    bottom: 0;
-    color:white;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: auto;
-    background-color: rgba(0, 0, 0,0.7);
+.copyright {
+	margin: 0;
+}
+
+.copyright a{
+    border-bottom: 1px dotted #fff;
+}
+
+#footer span{
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    color: #ff5252;
+}
+
+.social-links {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 20px;
+}
+
+.social-links li {
+	display: inline-block;
+	margin: 5px;        
+}
+
+.social-links a {
+	width: 36px;
+	height: 36px;
+	display: block;
+	line-height: 35px;
+	text-align: center;
+	border: 1px solid rgba(255, 255, 255, .1);
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+			border-radius: 3px;
+	font-size: 14px;
+	color: rgba(255, 255, 255, .2);
+}
+
+.social-links a:hover {
+	border: 1px solid rgba(255, 255, 255, .5);
+	color: rgba(255, 255, 255, .8);
 }
 
 .marketing {
@@ -163,12 +207,13 @@ body {
 }
 
 
-#username{
-    position:absolute ;
-    right:100px;
-    font-size:15px;
-    color:#8AC007;
+#username {
+    position: absolute;
+    right: 100px;
+    font-size: 15px;
+    color: #8AC007;
 }
+
 #search {
     position: fixed;
     top: 0px;
@@ -235,3 +280,81 @@ body {
         padding: 10px 17px;
         font-size: 27px;
     }
+
+.filterable {
+    margin-top: 15px;
+}
+
+    .filterable .panel-heading .pull-right {
+        margin-top: -20px;
+    }
+
+    .filterable .filters input[disabled] {
+        background-color: transparent;
+        border: none;
+        cursor: auto;
+        box-shadow: none;
+        padding: 0;
+        height: auto;
+    }
+
+        .filterable .filters input[disabled]::-webkit-input-placeholder {
+            color: #333;
+        }
+
+        .filterable .filters input[disabled]::-moz-placeholder {
+            color: #333;
+        }
+
+        .filterable .filters input[disabled]:-ms-input-placeholder {
+            color: #333;
+        }
+
+
+#myCarousel {
+    padding-left: 125px;
+    padding-right: 125px;
+    height: 400px;
+}
+.jumbotron {
+    margin-bottom:0px;
+    border-radius:0px;
+    border:none;
+    margin:0px;
+}
+
+
+
+.intro {
+background-color: #27ae60; 
+color:white; 
+padding:50px;
+
+}
+@media (max-width: 780px) {
+
+    #myCarousel {
+        display:none;
+    }
+    .jumbotron {
+        border:0px;
+       border-radius:0px;
+
+    }
+	.jumbotron > h1 {
+		font-size: 34px;
+		letter-spacing: 3px;
+
+	}
+
+	lead {
+		font-size: 24px;
+		margin: 0 0 30px;
+		letter-spacing: 3px;
+	}
+    .intro {
+        padding:10px;
+    }
+
+
+}

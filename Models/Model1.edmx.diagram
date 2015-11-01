@@ -13,7 +13,10 @@
         <AssociationConnector Association="RMDBModel.FK_Orders_Product" />
         <EntityTypeShape EntityType="RMDBModel.User" Width="1.5" PointX="3.25" PointY="5.25" />
         <AssociationConnector Association="RMDBModel.FK_Orders_User" />
-      </Diagram>
+        <EntityTypeShape EntityType="RMDBModel.Sale" Width="1.5" PointX="6.25" PointY="7.125" />
+        <AssociationConnector Association="RMDBModel.FK_Sales_ToProduct" />
+        <AssociationConnector Association="RMDBModel.FK_Sales_ToUser" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

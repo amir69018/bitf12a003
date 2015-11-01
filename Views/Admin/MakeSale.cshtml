@@ -1,0 +1,37 @@
+﻿@model RespromedicalMVC.Models.Sale
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="well text-center">Make New Sale</h2>
+<div class="col-sm-8 contact-form">
+    <form id="contact" method="post" action="/admin/SaveNewSale" class="form" role="form">
+        <div class="row">
+            <div class="col-xs-6 col-md-6 form-group">
+                <!--                    <option value="" disabled selected>Select your Product</option>
+                -->
+                @Html.DropDownListFor(m => m.sale_product_id, ViewBag.Products as SelectList, "--Select Product--", new { @class = "form-control", @id = "SelectProduct", @name = "SelectProduct" })
+
+
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                @Html.DropDownListFor(m => m.user_id, ViewBag.Users as SelectList, "--Select Customer--", new { @class = "form-control", @id = "SelectUser", @name = "SelectUser" })
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                @Html.TextBoxFor(m => m.sale_amount, new { @class = "form-control", @id = "Amount", @type = "text", @required = "required", @placeholder = "Amount" })
+                <!--  <input class="form-control" id="quantitySold" name="quantitySold" placeholder="Quantity" type="text" required />
+                -->
+            </div>
+          
+            <div class="col-xs-6 col-md-6 form-group">
+                <button class="btn btn-primary btn-circle form-control pull-right" type="submit">Submit</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-12 form-group">
+            </div>
+        </div>
+    </form>
+</div>

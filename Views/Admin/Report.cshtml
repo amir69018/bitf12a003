@@ -1,0 +1,79 @@
+﻿@model RespromedicalMVC.Models.SaleProductCustomer
+@{
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Report</title>
+    <link rel="stylesheet" href="~/css/reportstyle.css" media="all" />
+</head>
+<body>
+    <header class="clearfix">
+        <div id="logo">
+            <img src="/Images/logo.jpg">
+        </div>
+       
+        
+    </header>
+    <main>
+        <div id="details" class="clearfix">
+            <div id="client">
+                <div class="to">INVOICE TO:</div>
+                <h2 class="name">@Model.user.user_first_name  @Model.user.user_last_name</h2>
+                <div class="address">@Model.user.user_address</div>
+                <div class="email"><a href="mailto:">@Model.user.user_email</a></div>
+            </div>
+            <div id="invoice">
+                <h1>INVOICE @Model.sale.sale_id</h1>
+                <div class="date">Date of Invoice: @DateTime.Now</div>
+                <div class="date">Date of Sale: @Model.sale.sale_time</div>
+            </div>
+        </div>
+        <table border="0" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th class="no">#</th>
+                    <th class="desc">DESCRIPTION</th>
+                    <th class="unit">UNIT PRICE</th>
+                    <th class="qty">QUANTITY</th>
+                    <th class="total">TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="no">1</td>
+                    <td class="desc"><h3>@Model.product.product_name</h3>@Model.product.product_description</td>
+                    <td class="unit">@Model.sale.sale_amount</td>
+                    <td class="qty">1</td>
+                    <td class="total">@Model.sale.sale_amount</td>
+                </tr>
+
+            <tfoot>
+                <tr>
+                    <td colspan="2"></td>
+                    <td colspan="2">SUBTOTAL</td>
+                    <td>@Model.sale.sale_amount</td>
+                </tr>
+               
+                <tr>
+                    <td colspan="2"></td>
+                    <td colspan="2">GRAND TOTAL</td>
+                    <td>@Model.sale.sale_amount</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div id="thanks">Thank you!</div>
+
+    </main>
+    <footer>
+            <h2 class="name">Respro Medical</h2>
+            <div>Office 118, 1st Floor Century</div>
+            <div>Tower, Kalma Chowk, Lahore</div>
+            <div>PH: 042- 35913945
+            Cell: 0321-4181410</div>
+            <div><a href="mailto:respromedical@gmail.com">respromedical@gmail.com</a></div>
+    </footer>
+</body>
+</html>     

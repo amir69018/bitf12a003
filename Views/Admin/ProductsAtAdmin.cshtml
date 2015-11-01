@@ -5,34 +5,53 @@
 
 }
 
-<h1 class="header text-center">Products At Admin</h1>
-
-<button class="btn btn-default" data-toggle="modal" data-target="#newCategory">Add new Product Category</button>
-<a href="/Admin/NewProduct" class="btn btn-default">Add new Product</a>
+<h2 class="well text-center">Products</h2>
+<h2 class="well text-center">
+    <button class="btn btn-default" data-toggle="modal" data-target="#newCategory">Add new Product Category</button>
+    <a href="/Admin/NewProduct" class="btn btn-default">Add new Product</a>
+</h2>
 <hr />
-<div class="container">
 
-    <div class="row text-center">
-        <div class="row style_featured">
-            @foreach (var v in Model) {
-                <div class="col-md-3 col-sm-6 hero-feature">
-                    <div class="thumbnail">
-                        <img src=@v.path alt="">
-                        <div class="caption">
-                            <h3>@v.product_name</h3>
-                            <p>@v.product_description</p>
-                            <p>
-                                <a href="/Admin/DeleteProduct/@v.product_id" class="btn btn-warning">Delete</a>
-                            </p>
-                        </div>
-                    </div>
+    <div class="row">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">Users</h3>
+                <div class="pull-right">
+                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                 </div>
-            }
+            </div>
+            <table class="table ">
+                <thead>
+                    <tr class="filters">
+                        <th><input type="text" class="form-control" placeholder="#" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Picture" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Name" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Description" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Number" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Date" disabled></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var v in Model)
+                    {
+                        <tr>
+                            <td>@v.product_id</td>
+                            <td> <image style="width:100px;height:100px" src=@v.path alt=""></td>
+                            <td><b>@v.product_name</b></td>
+                            <td>@v.product_description</td>
+                            <td>@v.product_number</td>
+                            <td>@v.modified_date</td>
+                            <td>
+                                <a href="/Admin/DeleteProduct/@v.product_id" class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
         </div>
     </div>
-    
-
-</div>
 
 
 
