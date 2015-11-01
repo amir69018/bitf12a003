@@ -2,7 +2,7 @@
     ViewBag.Title = "Home";
 }
 
-<div class="jumbotron" style="background-color: #8e44ad; color: white;">
+<div class="jumbotron wow fadeInDown" data-wow-duration="2.5s" style="background-color: #8e44ad; color: white;">
     <center>
         <h1>Respro Medical</h1>
         <p class="lead">
@@ -10,11 +10,9 @@
         </p>
     </center>
 </div>
-
-<br />
 <!--Caousel-->
-<div style="padding-left:125px; padding-right:125px;" id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -25,7 +23,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="~/Images/banner1.jpg">
+            <img src="~/Images/banner1.jpg" style="height:400px;">
             <div class="container">
                 <div class="carousel-caption">
                     <h3 style="color:GrayText">For the first time in Pakistan..</h3>
@@ -33,7 +31,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="~/Images/banner2.jpg">
+            <img src="~/Images/banner2.jpg" style="height:400px;">
             <div class="container">
                 <div class="carousel-caption">
                 </div>
@@ -41,11 +39,11 @@
         </div>
 
         <div class="item">
-            <img src="~/Images/banner3.jpg">
+            <img src="~/Images/banner3.jpg" style="height:400px;">
         </div>
 
         <div class="item">
-            <img src="~/Images/banner4.jpg">
+            <img src="~/Images/banner4.jpg" style="height:400px;">
         </div>
     </div>
 
@@ -58,44 +56,44 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<br />
-<br />
-<div class="leftrightBasicMargins">
-    <div class="row">
-        <div class="col-sm-8">
-            <h2>What We Do</h2>
-            <p>
-                Sale, Repair respirotry machines and devices that helps in respiration and sleep; all over Pakistan.
-            </p>
-            <p>
-                Diagnose Sleep Apnea study.
-            </p>
-            <p>
-                <a class="btn btn-default btn-lg" href="/Home/contactus">Directions and Map &raquo;</a>
-            </p>
-        </div>
-        <div class="col-sm-4">
-            <h2>Contact Us</h2>
-            <address>
-                <strong>Respro Medical</strong>
-                <br>118, Century Tower
-                <br>Kalma Chowk, Lahore Pk.
-                <br>
-            </address>
-            <address>
-                <span class="glyphicon glyphicon-phone"></span> <abbr title="Phone">P:</abbr>(+92) 322 4181410
-                <br>
-                <span class="glyphicon glyphicon-envelope"></span> <abbr title="Email">E:</abbr> <a href="mailto:#">respromedical@gmail.com</a>
-            </address>
-        </div>
-    </div>
-    <!-- /.row -->
 
+<div class="row intro wow fadeInUp" >
+    <div class=" col-sm-8 wow lightspeedin" data-wow-duration="1.5s">
+        <h2 class=" wow slideinright" data-wow-duration="1s">
+            What We Do
+        </h2>
+        <h4 class="lead wow slideInRight" data-wow-duration="3s">
+            Sale, Repair respirotry machines and devices that helps in respiration and sleep; all over Pakistan.
+        </h4>
+        <h4 class="lead wow slideInRight" data-wow-duration="3s" data-wow-delay="1s">
+            Diagnose Sleep Apnea study.
+        </h4>
+        <p>
+            <a class="btn btn-default btn-lg" href="/Home/contactus">Directions and Map &raquo;</a>
+        </p>
+    </div>
+    <div class="col-sm-4 wow lightSpeedIn" data-wow-delay="1s">
+        <h2>Contact Us</h2>
+        <address>
+            <strong>Respro Medical</strong>
+            <br>118, Century Tower
+            <br>Kalma Chowk, Lahore Pk.
+            <br>
+        </address>
+        <address>
+            <span class="glyphicon glyphicon-phone"></span> <abbr title="Phone">P:</abbr>(+92) 322 4181410
+            <br>
+            <span class="glyphicon glyphicon-envelope"></span> <abbr title="Email">E:</abbr> <a href="mailto:#">respromedical@gmail.com</a>
+        </address>
+    </div>
+</div>
+<div class="container">
+    
     <hr>
     <!--div's-->
-    <div class=" marketing">
+    <div class="marketing">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="1s">
                 <img class="img-circle" src="/Images/quality.jpg" alt="Generic placeholder image">
                 <h2>Quality, Selection and Service</h2>
                 <p>
@@ -103,7 +101,7 @@
                 </p>
                 <p><a class="btn btn-primary btn-lg" href="/Home/Aboutus" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
+            <div class="col-lg-4 wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
                 <img class="img-circle" src="/Images/supplies.jpg" alt="Generic placeholder image">
                 <h2>We Know Medical Supplies</h2>
                 <p>Our customer service representatives are ready to help you with questions you might have. We are interested in your comments and needs. Please let us know how we can help you or what you think we can do to better improve our site, selection of medical related products or customer service.</p>
@@ -111,7 +109,7 @@
             </div><!-- /.col-lg-4 -->
 
 
-            <div class="col-lg-4">
+            <div class="col-lg-4 wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="1s">
                 <img class="img-circle" src="/Images/privacy.jpg" alt="Generic placeholder image">
                 <h2>Security and Privacy</h2>
                 <p>We take our customers concerns regarding their privacy and security very seriously. Please note that we do NOT sell or share any client data with other companies or institutions. Unless when processing the actual order or when required by law. You can also click on the Norton security seal to check our secured status.</p>
@@ -125,21 +123,21 @@
 
     <hr class="featurette-divider">
 
-    <div class="row featurette text-vertical-center">
-        <div class="col-md-7">
+    <div class="row featurette">
+        <div class="col-md-7 wow slideInLeft" data-wow-duration="1.5s">
             <h2 class="featurette-heading">Resmed <span class="text-muted">Our trusted partner.</span></h2>
             <p class="lead">We are united in our commitment to changing lives with every breath. With more than 4,000 employees and a presence in over 100 countries, we have been pioneering new and innovative devices and treatments for sleep-disordered breathing, chronic obstructive pulmonary disease (COPD) and other key chronic diseases for more than 25 years. Our world-leading products and innovative solutions improve the quality of life for millions of patients worldwide, reduce the impact of chronic disease and save healthcare costs.</p>
-            <p><a class="btn btn-default btn-lg" href="http://www.resmed.com" role="button">Visit web &raquo;</a></p>
+            <p><a class="btn btn-default btn-lg" href="http://www.resmed.com" target="_blank" role="button">Visit web &raquo;</a></p>
 
         </div>
         <div class="col-md-5">
-            <img class="featurette-image img-responsive center-block" src="/Images/resmed.jpg" alt="Generic placeholder image">
+            <img data-wow-duration="1.5s" class="featurette-image img-responsive center-block wow slideInRight" src="/Images/resmed.jpg" alt="Generic placeholder image">
         </div>
     </div>
     <hr class="featurette-divider">
 
     <div class="row featurette ">
-        <div class="col-md-7 col-md-push-5">
+        <div class="col-md-7 col-md-push-5  wow slideInRight" data-wow-duration="1.5s">
             <h2 class="featurette-heading">Airsep <span class="text-muted">Our trusted partner</span></h2>
             <p class="lead">
                 AirSep's products are known for their quality construction and innovative design.
@@ -148,31 +146,31 @@
 
             </p>
 
-            <p><a class="btn btn-default btn-lg" href="http://www.chartindustries.com/Industry/Industry-Products/Gas-Systems/AirSep-Commercial-Products-Division/AirSep-Products" role="button">Visit web &raquo;</a></p>
+            <p><a class="btn btn-default btn-lg" target="_blank" href="http://www.chartindustries.com/Industry/Industry-Products/Gas-Systems/AirSep-Commercial-Products-Division/AirSep-Products" role="button">Visit web &raquo;</a></p>
 
         </div>
-        <div class="col-md-5 col-md-pull-7">
-            <img class="featurette-image img-responsive center-block" src="/Images/airsep.jpg" alt="Generic placeholder image">
+        <div class="col-md-5 col-md-pull-7 ">
+            <img data-wow-duration="1.5s" class="featurette-image img-responsive center-block wow slideInLeft" src="/Images/airsep.jpg" alt="Generic placeholder image">
         </div>
     </div>
 
     <hr class="featurette-divider">
 
-    <div class="row featurette ">
-        <div class="col-md-7">
+    <div class="row featurette  ">
+        <div class="col-md-7  wow slideInLeft" data-wow-duration="1.5s">
             <h2 class="featurette-heading">Philips Respironics<span class="text-muted"> Our trusted partner.</span></h2>
-            <div class="header h4">Sleep and respiratory care <br />Breathe easier, sleep more naturally</div>
+            <div>Sleep and respiratory care <br />Breathe easier, sleep more naturally</div>
             <p class="lead">
                 Philips Respironics is the leading provider of innovative solutions for the global sleep and respiratory markets.
                 Respironics, Inc. is a medical supply company that specializes in products that improve respiratory functions. It is based in the Pittsburgh suburb of Murrysville.
 
 
             </p>
-            <p><a class="btn btn-default btn-lg" href="http://www.healthcare.philips.com/main/homehealth/respironics.wpd" role="button">Visit web &raquo;</a></p>
+            <p><a class="btn btn-default btn-lg" href="http://www.healthcare.philips.com/main/homehealth/respironics.wpd" target="_blank" role="button">Visit web &raquo;</a></p>
 
         </div>
         <div class="col-md-5">
-            <img class="featurette-image img-responsive center-block" src="/Images/philips-logo.jpg" alt="Generic placeholder image">
+            <img data-wow-duration="1.5s" class="featurette-image img-responsive center-block wow slideInRight" src="/Images/philips-logo.jpg" alt="Generic placeholder image">
         </div>
     </div>
 
