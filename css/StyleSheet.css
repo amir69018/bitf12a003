@@ -2,7 +2,83 @@
     transition: all .3s ease-in-out;
 }
 
+h2 {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 50px;
+}
+.highlight {
+    color: #2ac5ed;
+}
 
+
+
+#content {
+    padding: 70px 0;
+}
+#content .features-list {
+    padding-top: 35px;
+}
+.features-list .feature-block {
+    margin-bottom: 18px;
+}
+.features-list .feature-block .ico {
+    font-size: 37px;
+    line-height: 70px;
+    width:70px;
+    height: 70px;
+    background: #5accff;
+    display: inline-block;
+    border-radius: 50%;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+.features-list .feature-block.bottom-line .ico {
+    width: auto;
+    height: auto;
+	background: transparent;
+	color: #5accff;
+	text-align: center;
+	font-size: 41px;
+	vertical-align: top;
+	margin-top: -10px;
+}
+.features-list .feature-block.bottom-line .fa-github {
+	font-size: 50px;
+}
+.features-list .feature-block.bottom-line .fa-dashboard {
+	font-size: 45px;
+	margin-top: -15px;
+}
+.features-list .feature-block.bottom-line .ico {
+	float: left;
+	margin-right: 15px;
+	margin-left: 21px;
+}
+.features-list .feature-block.bottom-line .features-content {
+	padding-right: 15px;
+	display: table;
+}
+.features-list .feature-block.bottom-line .features-content .name {
+	margin-bottom: 5px;
+}
+.features-list .feature-block.bottom-line .features-content .subname {
+	font-size: 16px;
+	margin-bottom: 12px;
+}
+.features-list .feature-block .name {
+    font-size: 20px;
+    line-height: 1.25em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.features-list .feature-block .text {
+    font-size: 12px;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+                                        
 
 .leftrightBasicMargins {
     margin-left: 100px;
@@ -31,15 +107,11 @@ ul#nav li a:hover {
     font-size: 20px;
 }
 
-.jumbotron {
-    display: none;
-    border-radius: 50px;
-    border: 2px solid #8AC007;
-}
 
-    .jumbotron p {
-        color: white;
-    }
+
+.jumbotron p {
+    color: white;
+}
 
 .container {
     font-family: 'Eras ITC';
@@ -109,7 +181,6 @@ ul#nav li a:hover {
 
 .featurette > div {
     padding: 30px;
-    
 }
 
 .featurette p {
@@ -136,55 +207,55 @@ html {
 
 
 #footer {
-	background: #222;
-	text-align: center;
-	padding: 40px 0;
-	color: #FFF;
+    background: #222;
+    text-align: center;
+    padding: 40px 0;
+    color: #FFF;
 }
 
 .copyright {
-	margin: 0;
+    margin: 0;
 }
 
-.copyright a{
-    border-bottom: 1px dotted #fff;
-}
+    .copyright a {
+        border-bottom: 1px dotted #fff;
+    }
 
-#footer span{
+#footer span {
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
     color: #ff5252;
 }
 
 .social-links {
-	list-style: none;
-	padding: 0;
-	margin: 0 0 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
 }
 
-.social-links li {
-	display: inline-block;
-	margin: 5px;        
-}
+    .social-links li {
+        display: inline-block;
+        margin: 5px;
+    }
 
-.social-links a {
-	width: 36px;
-	height: 36px;
-	display: block;
-	line-height: 35px;
-	text-align: center;
-	border: 1px solid rgba(255, 255, 255, .1);
-	-webkit-border-radius: 3px;
-	   -moz-border-radius: 3px;
-			border-radius: 3px;
-	font-size: 14px;
-	color: rgba(255, 255, 255, .2);
-}
+    .social-links a {
+        width: 36px;
+        height: 36px;
+        display: block;
+        line-height: 35px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, .1);
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, .2);
+    }
 
-.social-links a:hover {
-	border: 1px solid rgba(255, 255, 255, .5);
-	color: rgba(255, 255, 255, .8);
-}
+        .social-links a:hover {
+            border: 1px solid rgba(255, 255, 255, .5);
+            color: rgba(255, 255, 255, .8);
+        }
 
 .marketing {
     background-color: white;
@@ -199,11 +270,17 @@ html {
     margin: 20px 0;
 }
 
+a { color: inherit; }
+
+    a:hover {
+    color:#5accff;
+    }
 /*for the search!!*/
 
 
 body {
     padding: 0px 0px;
+    
 }
 
 
@@ -316,45 +393,52 @@ body {
     padding-right: 125px;
     height: 400px;
 }
+
 .jumbotron {
-    margin-bottom:0px;
-    border-radius:0px;
-    border:none;
-    margin:0px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    border: none;
+    margin: 0px;
+}
+
+.jumbotron-margin {
+    margin-bottom:55px;
 }
 
 
-
-.intro {
-background-color: #27ae60; 
-color:white; 
-padding:50px;
-
-}
 @media (max-width: 780px) {
-
+    body {
+        padding:0px;
+        margin:0px;
+    }
     #myCarousel {
-        display:none;
-    }
-    .jumbotron {
-        border:0px;
-       border-radius:0px;
+        display: none;
 
     }
-	.jumbotron > h1 {
-		font-size: 34px;
-		letter-spacing: 3px;
 
-	}
-
-	lead {
-		font-size: 24px;
-		margin: 0 0 30px;
-		letter-spacing: 3px;
-	}
-    .intro {
-        padding:10px;
-    }
-
+    .jumbotron-margin {
+    margin-bottom:10px;
 
 }
+    .jumbotron {
+        border: 0px;
+        border-radius: 0px;
+        width: auto;
+    }
+
+        .jumbotron > h1 {
+            font-size: 34px;
+            letter-spacing: 3px;
+        }
+
+    lead {
+        font-size: 24px;
+        margin: 0 0 30px;
+        letter-spacing: 3px;
+    }
+
+   
+}
+
+
+
