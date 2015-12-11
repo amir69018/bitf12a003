@@ -155,9 +155,6 @@
             </div>
         </nav>
 
-      
-
-
         <div id="search">
             <button type="button" class="close">×</button>
             <form action="/Products/SearchProduct" method="post" role="search">
@@ -165,11 +162,11 @@
                 <button type="submit" class="btn btn-success btn-lg">Search</button>
             </form>
         </div>
-        <div style="margin-bottom:55px;"></div>
+        <div class="jumbotron-margin"></div>
         @{if (@Session["message"] != null)
         {
-            <div id="message" class="text-center alert alert-info leftrightBasicMargins lead">
-                <p>@Session["message"]</p>
+            <div id="message" class="text-center alert alert-info lead">
+                <p><span class="glyphicon glyphicon-info-sign"></span>@Session["message"]</p>
             </div>
             Session.Contents.Remove("message");
 
